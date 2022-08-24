@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "753919557841",
+    "project_id": "fir-emulatorexample",
+    "storage_bucket": "fir-emulatorexample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753919557841:android:a3ab68d62c4c36ffae45f0",
+        "android_client_info": {
+          "package_name": "com.example.firebaseemulator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753919557841-rlce75v8pmff8jrlbhil3d4inpe0rsdq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebaseemulator",
+            "certificate_hash": "b6fd2cc32c0413c62b76c13af3380c3e7f1fda03"
+          }
+        },
+        {
+          "client_id": "753919557841-quudiv6ku39cuvhlriip0lt2dbpfpbci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL0wkGZ51bmPv04InLHPzfh423YbE6T-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753919557841-quudiv6ku39cuvhlriip0lt2dbpfpbci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
