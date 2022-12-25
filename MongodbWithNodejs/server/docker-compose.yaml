@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  server:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+
+    container_name: server_container
+    environment:
+      - URL=${urlm}
+
+
+    ports:
+      - ${PORT2}:5000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+  fronted:
+    build: ./frontend
+    container_name: frontend_container
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true

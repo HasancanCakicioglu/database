@@ -6,6 +6,7 @@ import 'package:firebase/InAppMessage/inAppMessageView.dart';
 import 'package:firebase/addMob/addMobView.dart';
 import 'package:firebase/analytics/analyticsView.dart';
 import 'package:firebase/analytics/anayliyticManager.dart';
+import 'package:firebase/appSettings/appSettingManager.dart';
 import 'package:firebase/cloudStorage/cloudStorageView.dart';
 import 'package:firebase/dynamicLink/dynamicLinkManager.dart';
 import 'package:firebase/dynamicLink/dynamicLinkView.dart';
@@ -14,6 +15,7 @@ import 'package:firebase/firebaseMessaging/firebase_messagingManager.dart';
 import 'package:firebase/performanceMonitoring/performanceView.dart';
 import 'package:firebase/remoteConfig/remoteConfigView.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
@@ -24,7 +26,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // If you're going to use other Firebase services in the background, such as Firestore,
   // make sure you call `initializeApp` before using other Firebase services.
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: AppSettingsManager.platformOptions);
 
   print("Handling a background message: ${message.messageId}");
 }
@@ -33,12 +35,17 @@ Future<void> main() async {
   runZonedGuarded<Future<void>>(() async {
     WidgetsFlutterBinding.ensureInitialized();
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    await Firebase.initializeApp();
+    await Firebase.initializeApp(options: AppSettingsManager.platformOptions);
     MobileAds.instance.initialize();
 
     await FirebaseAppCheck.instance.activate(
       webRecaptchaSiteKey: 'recaptcha-v3-site-key',
+
     );
+  
+  
+
+    AppSettingsManager.useLocalEmulator(useLocalEmulator: true);
 
     
     

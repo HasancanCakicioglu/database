@@ -1,3 +1,4 @@
+import 'package:firebase/firebaseAuth/firebaseAuthView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -72,6 +73,9 @@ class AuthSettings {
 
   Future<void> signInWithEmailAndPassword(
       String emailAddress, String password) async {
+
+        
+
     try {
       final credential = await _auth.signInWithEmailAndPassword(
         email: emailAddress,
